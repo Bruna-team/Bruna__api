@@ -2,6 +2,7 @@ import Express from 'express';
 
 //Import de Middleware
 import { CreateAlumnos } from '../controllers/POST/CreateAlumno.js';
+import { GetAlumnos } from '../controllers/GET/GetAlumnos.js';
 
 export const routes = Express.Router();
 
@@ -83,4 +84,26 @@ export const routes = Express.Router();
  */
 routes.post('/CreateAlumno', CreateAlumnos, (req, res) => {
   //Ruta de la Creacion de los Alumnos
+});
+
+//Documentacion Ruta de Creacion de Alumnos
+/**
+ * @swagger
+ * /GetAlumnos:
+ *   get:
+ *     summary: Retornar todos los Usuarios
+ *     tags: [Alumno]
+ *     responses:
+ *       200:
+ *         description: Todos los Usuarios
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Alumno'
+ *           
+ */
+routes.get('/GetAlumnos', GetAlumnos, (req, res) => {
+  //Ruta de Obtener a los Alumnos
 });
