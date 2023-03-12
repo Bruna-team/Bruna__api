@@ -18,6 +18,8 @@ verify.connect(function (err) {
     return;
   }
   console.log('Verificando y Conectando con el identificador ' + verify.threadId);
+  console.log("Evaluando Existencia de la Base de Datos")
+  console.log('Contectado con Exito')
 });
 
 verify.query(`SHOW DATABASES LIKE 'bd_madre_rafols'`, (err, res) => {
